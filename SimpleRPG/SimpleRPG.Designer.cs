@@ -1,6 +1,6 @@
 ﻿namespace SimpleRPG
 {
-    partial class SuperRPG
+    partial class SimpleRPG
     {
         /// <summary>
         /// Required designer variable.

@@ -11,10 +11,10 @@ using Engine;
 
 namespace SimpleRPG
 {
-    public partial class SuperRPG : Form
+    public partial class SimpleRPG : Form
     {
         private Player _player;
-        public SuperRPG()
+        public SimpleRPG()
         {
             InitializeComponent();
 

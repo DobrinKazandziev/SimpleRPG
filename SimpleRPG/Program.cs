@@ -16,7 +16,7 @@ namespace SimpleRPG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SuperRPG());
+            Application.Run(new SimpleRPG());
         }
     }
 }
