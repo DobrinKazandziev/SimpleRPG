@@ -254,7 +254,7 @@
             this.dgvQuests.ReadOnly = true;
             this.dgvQuests.RowHeadersVisible = false;
             this.dgvQuests.Size = new System.Drawing.Size(312, 189);
-            this.dgvQuests.TabIndex = 20;
+            this.dgvQuests.TabIndex = 20;        
             // 
             // SimpleRPG
             // 
