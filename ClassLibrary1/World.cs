@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Engine
 {
-    class World
+    public class World
     {
         public static readonly List<Item> Items = new List<Item>();
         public static readonly List<Monster> Monsters = new List<Monster>();
@@ -102,7 +102,7 @@ namespace Engine
 
             Quests.Add(clearAlchemistGarden);
             Quests.Add(clearFarmersField);
-107 }
+    }
 
         private static void PopulateLocations()
         {
