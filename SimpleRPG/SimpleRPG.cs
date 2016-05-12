@@ -21,15 +21,10 @@ namespace SimpleRPG
 
             Location location = new Location(1, "Home", "This is your house.");
 
-            _player = new Player(10, 10, 20, 0, 1);
+            _player = new Player(10, 10, 20, 0);
             MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
             _player.Inventory.Add(new InventoryItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1));
-
-            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
-            lblGold.Text = _player.Gold.ToString();
-            lblExperience.Text = _player.ExperiencePoints.ToString();
-            lblLevel.Text = _player.Level.ToString();
-
+            UpdatePlayerStats();
         }
 
         private void btnNorth_Click(object sender, EventArgs e)
@@ -81,7 +76,7 @@ namespace SimpleRPG
 
             //Heal player
             _player.CurrentHitPoints = _player.MaximumHitPoints;
-            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
+            UpdatePlayerStats();
 
             //Does the location have a quest?
             if (newLocation.QuestAvailableHere != null)
@@ -125,6 +120,7 @@ namespace SimpleRPG
 
                         //Find quest in player's quest list, and mark complete
                         _player.MarkQuestCompleted(newLocation.QuestAvailableHere);
+                        UpdatePlayerStats();
                     }
                 }
                 else
@@ -193,6 +189,7 @@ namespace SimpleRPG
             UpdateQuestListInUI();
             UpdateWeaponListInUI();
             UpdatePotionListInUI();
+            UpdatePlayerStats();
         }
         private void UpdateInventoryListInUI()
         {
@@ -283,6 +280,13 @@ namespace SimpleRPG
                 cboPotions.SelectedIndex = 0;
             }
         }
+        private void UpdatePlayerStats()
+        {
+            lblHitPoints.Text = _player.CurrentHitPoints.ToString();
+            lblGold.Text = _player.Gold.ToString();
+            lblExperience.Text = _player.ExperiencePoints.ToString();
+            lblLevel.Text = _player.Level.ToString();
+        }
 
         private void btnUseWeapon_Click(object sender, EventArgs e)
         {
@@ -335,10 +339,7 @@ namespace SimpleRPG
                     }
                 }
                 //Refresh player inf and controls
-                lblHitPoints.Text = _player.CurrentHitPoints.ToString();
-                lblGold.Text = _player.Gold.ToString();
-                lblExperience.Text = _player.ExperiencePoints.ToString();
-                lblLevel.Text = _player.Level.ToString();
+                UpdatePlayerStats();
                 UpdateInventoryListInUI();
                 UpdateWeaponListInUI();
                 UpdatePotionListInUI();
@@ -358,6 +359,7 @@ namespace SimpleRPG
                     rtbMessages.Text += "The " + _currentMonster.Name + " killed you." + Environment.NewLine;
                     MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
                 }
+                UpdatePlayerStats();
             }
         }
 
@@ -393,6 +395,12 @@ namespace SimpleRPG
             lblHitPoints.Text = _player.CurrentHitPoints.ToString();
             UpdateInventoryListInUI();
             UpdatePotionListInUI();
+        }
+
+        private void rtbMessages_TextChanged(object sender, EventArgs e)
+        {
+            rtbMessages.SelectionStart = rtbMessages.Text.Length;
+            rtbMessages.ScrollToCaret();
         }
     }
 }
