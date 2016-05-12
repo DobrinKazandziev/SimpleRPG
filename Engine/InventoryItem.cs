@@ -31,6 +31,14 @@ namespace Engine
                 OnPropertyChanged("Description");
             }
         }
+        public int ItemID
+        {
+            get { return Details.ID; }
+        }
+        public int Price
+        {
+            get { return Details.Price; }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public InventoryItem(Item details, int quantity)
