@@ -10,17 +10,17 @@ using System.Windows.Forms;
 using Engine;
 using System.IO;
 
-
 namespace SimpleRPG
 {
     public partial class SimpleRPG : Form
     {
         private Player _player;
         private const string PLAYER_DATA_FILE_NAME = "PlayerData.xml";
+        WorldMap worldMapScreen;
         public SimpleRPG()
         {
             InitializeComponent();
-
+            worldMapScreen=new WorldMap();
             if (File.Exists(PLAYER_DATA_FILE_NAME))
             {
                 _player = Player.CreatePlayerFromXmlString(File.ReadAllText(PLAYER_DATA_FILE_NAME));
@@ -196,6 +196,19 @@ namespace SimpleRPG
             TradingScreen tradingScreen = new TradingScreen(_player);
             tradingScreen.StartPosition = FormStartPosition.CenterParent;
             tradingScreen.ShowDialog(this);
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            if (worldMapScreen.Visible)
+            {
+                worldMapScreen.Hide();
+            }
+            else
+            {
+                worldMapScreen.Show();
+                worldMapScreen.SetDesktopLocation(this.Location.X + this.Size.Width, this.Location.Y+1);
+            }
         }
     }
 }

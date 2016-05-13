@@ -75,6 +75,12 @@
     <Compile Include="TradingScreen.Designer.cs">
       <DependentUpon>TradingScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorldMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldMap.Designer.cs">
+      <DependentUpon>WorldMap.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,12 +89,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SimpleRPG.resx">
       <DependentUpon>SimpleRPG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TradingScreen.resx">
       <DependentUpon>TradingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorldMap.resx">
+      <DependentUpon>WorldMap.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -123,6 +133,9 @@
       <Project>{cdc6c428-af1b-4121-bd2b-aaa804bec221}</Project>
       <Name>Engine</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ss+%282016-05-11+at+05.09.22%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
