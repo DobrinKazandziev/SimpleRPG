@@ -5,8 +5,7 @@ This application in a very simplistic **text RPG** game ,created for a class ass
 This game is based on a [tutorial](http://scottlilly.com/learn-c-by-building-a-simple-rpg-index/) to learn **C#** programming from [Scott Lilly](https://scottlilly.com/) which is very detailed hands-on way to learn to code.
 ## 2. How to play
 ### 2.1 How it looks
-![Main screen](http://puu.sh/oQyfv/e9138b4648.png)
-![Map screen](http://puu.sh/oQyhJ/87c60fe78b.png)
+![Main screen](https://i0.wp.com/scottlilly.com/wp-content/uploads/2014/05/Lesson-00.1-Game-screenshot.png?s)
 ### 2.2 Playing the game
 You start in the _Home_ area, and have buttons for **North,South,East,West**.  
 Some areas you go to can give you a quest asking you to return with some quantity of items.  
